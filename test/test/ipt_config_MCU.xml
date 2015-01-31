@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE cpu SYSTEM "C:\Program Files (x86)\Bombardier Transportation\Synapse\Plugins\mt-project_with_ip.dtd">
+<cpu name="IID">
+  <comment><![CDATA[IID]]></comment>
+  <!-- NETWORK_INTERFACE_FILE_GENERATOR_VERSION 4.15.2.4 -->
+  <!-- DEVICE_INTERFACE_VERSION 2.0.0.0 -->
+  <bus-interface-list>
+    <bus-interface type="ETH" address="0" name="ECN">
+      <!-- Generic Telegrams -->
+      <telegram type="sink" data-set-id="841" size="12" name="iMCGRepReq2SendF" com-parameter-id="3" com-id="841">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" response-timeout="1000" ack-timeout="100" />
+      </telegram>
+      <telegram type="sink" data-set-id="842" size="584" name="iMCGReqReqFile" com-parameter-id="3" com-id="842">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" ack-timeout="100" />
+      </telegram>
+      <telegram type="sink" data-set-id="845" size="8" name="iMCGRepFTfSt" com-parameter-id="3" com-id="845">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" response-timeout="1000" ack-timeout="100" />
+      </telegram>
+      <telegram type="sink" data-set-id="846" size="628" name="iEDSReqPrepData" com-parameter-id="3" com-id="846">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" ack-timeout="100" />
+      </telegram>
+	   <telegram type="" data-set-id="2404001" size="252" name="DevIdent" class="absolute" com-parameter-id="1" com-id="240400100">
+ <pd-receive-parameter source-uri="" timeout-value="2000"  validity-behavior="0" />
+ <pd-send-parameter destination-uri="grpACSU.aCar.lCst" cycle-time="1000"  redundant="0" />
+ </telegram>
+      <telegram type="sink" data-set-id="2403101" size="64" name="iCCUC_DIS" com-parameter-id="3" com-id="240310100">
+        <pd-receive-parameter source-uri="" timeout-value="300" validity-behavior="0" />
+        <pd-send-parameter redundant="0" destination-uri="grpPISDISCtrl.aCar.aCst" cycle-time="300" />
+      </telegram>
+      <telegram type="sink" data-set-id="2712001" size="161" name="iINFCtrl1" com-parameter-id="3" com-id="271200100">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="ApplServer@grpIID.aCar.lCst" ack-timeout="1500" />
+      </telegram>
+      <telegram type="sink" data-set-id="8001101" size="72" name="iMDS_Global_I1" com-parameter-id="3" com-id="800110100">
+        <pd-receive-parameter source-uri="" timeout-value="1500" validity-behavior="0" />
+        <pd-send-parameter redundant="0" destination-uri="grpMDS.lCar.lCst" cycle-time="300" />
+      </telegram>
+      <telegram type="sink" data-set-id="8001102" size="852" name="iED_FileSync_I1" com-parameter-id="3" com-id="800110200">
+        <pd-receive-parameter source-uri="" timeout-value="2500" validity-behavior="0" />
+        <pd-send-parameter redundant="0" destination-uri="grpMDS.lCar.lCst" cycle-time="500" />
+      </telegram>
+      <telegram type="sink" data-set-id="8002001" size="8" name="iMDS_VRS_Q1" com-parameter-id="3" com-id="800200100">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" ack-timeout="100" />
+      </telegram>
+      <telegram type="sink" data-set-id="8003001" size="15" name="iED_TestOnDem_C1" com-parameter-id="3" com-id="800300100">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" ack-timeout="100" />
+      </telegram>
+      <telegram type="sink" data-set-id="8003002" size="148" name="iED_OpeParamAdj_C1" com-parameter-id="3" com-id="800300200">
+        <pd-receive-parameter source-uri="" timeout-value="1500" validity-behavior="0" />
+        <pd-send-parameter redundant="0" destination-uri="grpMDS.lCar.lCst" cycle-time="300" />
+      </telegram>
+      <telegram type="source" data-set-id="840" size="276" name="oMCGReqReq2SendF" com-parameter-id="3" com-id="840">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="mcgframework@CDP1.lCar.lCst" ack-timeout="100" />
+      </telegram>
+      <telegram type="source" data-set-id="843" size="8" name="oMCGRepReqFile" com-parameter-id="3" com-id="843">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" response-timeout="1000" ack-timeout="100" />
+      </telegram>
+      <telegram type="source" data-set-id="844" size="16" name="oMCGReqFTfSt" com-parameter-id="3" com-id="844">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="mcgframework@CDP1.lCar.lCst" ack-timeout="100" />
+      </telegram>
+      <telegram type="source" data-set-id="847" size="48" name="oEDSRepPrepData" com-parameter-id="3" com-id="847">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" response-timeout="1000" ack-timeout="100" />
+      </telegram>
+      <telegram type="source" data-set-id="2705001" size="32" name="oINFStat" com-parameter-id="3" com-id="270500100">
+        <pd-receive-parameter source-uri="" timeout-value="1500" validity-behavior="0" />
+        <pd-send-parameter redundant="0" destination-uri="grpDS.lCar.lCst" cycle-time="300" />
+      </telegram>
+      <telegram type="source" data-set-id="2707001" size="20" name="oINFDiag" com-parameter-id="3" com-id="270700100">
+        <pd-receive-parameter source-uri="" timeout-value="1500" validity-behavior="0" />
+        <pd-send-parameter redundant="0" destination-uri="grpDS.lCar.lCst" cycle-time="300" />
+      </telegram>
+      <telegram type="source" data-set-id="8003100" size="60001" name="oED_RtdmStream_I1" com-parameter-id="3" com-id="800310000">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="grpRTDM.lCar.lCst" ack-timeout="2500" />
+      </telegram>
+      <telegram type="source" data-set-id="8004001" size="1216" name="oED_VRS_R1" com-parameter-id="3" com-id="800400100">
+        <md-receive-parameter source-uri="" />
+        <md-send-parameter destination-uri="" response-timeout="1000" ack-timeout="100" />
+      </telegram>
+    </bus-interface>
+  </bus-interface-list>
+  <data-set-list>
+   <data-set  data-set-id="2404001">
+   <process-variable name="ISysSwVersion" type="UINT8" offset="0" array-size="1"  unit=""  scale="1"  zero-offset="100" />
+   <process-variable name="ISysSwRelease" type="UINT8" offset="8" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="ISysSwUpdate" type="UINT8" offset="16" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="ISysSwEvolution" type="UINT8" offset="24" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="ISvnNo" type="UINT32" offset="32" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IHwVersNo" type="UINT8" offset="64" array-size="1"  unit=""  scale="1"  zero-offset="100" />
+   <process-variable name="IHwReleaseNo" type="UINT8" offset="72" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="Reserved2" type="UINT8" offset="80" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved3" type="UINT8" offset="88" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IUniqueSerialNo" type="UINT8" offset="96" array-size="6"  unit="Bit Set"  scale="1"  zero-offset="0" />
+   <process-variable name="Reserved4" type="UINT8" offset="144" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved5" type="UINT8" offset="152" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="ISupplierName" type="CHAR8" offset="160" array-size="4"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IDevType" type="UINT8" offset="192" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IDevInstance" type="UINT8" offset="200" array-size="1"  unit=""  scale="1"  zero-offset="101" />
+   <process-variable name="Reserved6" type="UINT8" offset="208" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved7" type="UINT8" offset="216" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved8" type="UINT8" offset="224" array-size="4"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IEDMode" type="UINT8" offset="256" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IConfigStatus" type="UINT8" offset="264" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved9" type="UINT8" offset="272" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved10" type="UINT8" offset="280" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved11" type="UINT8" offset="288" array-size="4"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IDevIpAddress" type="CHAR8" offset="320" array-size="16"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IDevFqdn" type="CHAR8" offset="448" array-size="128"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IConfigSwVer" type="UINT8" offset="1472" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IConfigSwRel" type="UINT8" offset="1480" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IConfigSwUpd" type="UINT8" offset="1488" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IConfigSwEvo" type="UINT8" offset="1496" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IFontSwVer" type="UINT8" offset="1504" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IFontSwRel" type="UINT8" offset="1512" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IFontSwUpd" type="UINT8" offset="1520" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IFontSwEvo" type="UINT8" offset="1528" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IAppliSwVer" type="UINT8" offset="1536" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IAppliSwRel" type="UINT8" offset="1544" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IAppliSwUpd" type="UINT8" offset="1552" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IAppliSwEvo" type="UINT8" offset="1560" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IOSKernelSwVer" type="UINT8" offset="1568" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IOSKernelSwRel" type="UINT8" offset="1576" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IOSKernelSwUpd" type="UINT8" offset="1584" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IOSKernelSwEvo" type="UINT8" offset="1592" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IBootLoadSwVer" type="UINT8" offset="1600" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IBootLoadSwRel" type="UINT8" offset="1608" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IBootLoadSwUpd" type="UINT8" offset="1616" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IBootLoadSwEvo" type="UINT8" offset="1624" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="IFpagAppVer" type="UINT8" offset="1632" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="IFpagAppRel" type="UINT8" offset="1640" array-size="1"  unit=""  scale="1"  zero-offset="0" />
+   <process-variable name="Reserved12" type="UINT8" offset="0" array-size="2"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="VSysSwId" type="UINT8" offset="0" array-size="12"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="VSysSwDate" type="UINT32" offset="0" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="VCrc" type="UINT32" offset="0" array-size="1"  unit=""  scale="1.0"  zero-offset="0" />
+   <process-variable name="Reserved13" type="UINT8" offset="0" array-size="24"  unit=""  scale="1.0"  zero-offset="0" />
+ </data-set>
+    <data-set data-set-id="840">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="transactionID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="dataID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="waysideRef" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="256" name="filename" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="filesize" type="UINT32" />
+    </data-set>
+    <data-set data-set-id="841">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appResultCode" type="INT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="transactionID" type="UINT32" />
+    </data-set>
+    <data-set data-set-id="842">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="TransactionID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="256" name="filename" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="64" name="fileServerHostname" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="256" name="fileServerPath" type="CHAR8" />
+    </data-set>
+    <data-set data-set-id="843">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appResultCode" type="INT32" />
+    </data-set>
+    <data-set data-set-id="844">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appResultCode" type="INT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="transactionID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="statusData" type="UINT32" />
+    </data-set>
+    <data-set data-set-id="845">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appResultCode" type="INT32" />
+    </data-set>
+    <data-set data-set-id="1001">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="version" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="resultCode" type="INT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="timeMsgSent" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="timeMsgValidity" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="dataID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="waysideRef" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="4" name="Reserved1" type="UINT32" />
+    </data-set>
+    <data-set data-set-id="1002">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="transactionID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="64" name="dataLocation" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="noOfChars" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="512" name="specificParameters" type="CHAR8" />
+    </data-set>
+    <data-set data-set-id="846">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="MsgHeadEDSReqPrepData" type="1001" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="MsgDataEDSReqPrepData" type="1002" />
+    </data-set>
+    <data-set data-set-id="1003">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="version" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="resultCode" type="INT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="timeMsgSent" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="timeMsgValidity" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="dataID" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="waysideRef" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="4" name="Reserved1" type="UINT32" />
+    </data-set>
+    <data-set data-set-id="1004">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appVersion" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="appResultCode" type="INT32" />
+    </data-set>
+    <data-set data-set-id="847">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="MsgHeadEDSRepPrepData" type="1003" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="MsgDataEDSRepPrepData" type="1004" />
+    </data-set>
+    <data-set data-set-id="2403101">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IDisServLifeSign" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="61" name="Reserved2" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="2705001">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ISystemLifeSign" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IGenSysMode" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IBacklightStatus" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ITempSensor" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ILightSensor" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IBckLightLv" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="9" array-size="23" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1005">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="FTimeoutComMod" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved3" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1006">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="FWatchdogApiMod" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="FApiMod" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="2" array-size="6" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1007">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="FBcklightFault" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="FTempOR" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="FWebInt" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="7" array-size="5" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="2707001">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="ComModule402" type="1005" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="ApplModule402" type="1006" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="TFTScreens402" type="1007" />
+    </data-set>
+    <data-set data-set-id="1008">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="CGenSystemMode" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="3" name="Reserved2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IURL" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="3" name="Reserved3" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1009">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="7" name="Reserved3" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1010">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="7" name="Reserved2" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1011">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="7" name="Reserved2" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="2712001">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="INFCtrlCommands" type="1008" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="INFMntCommands" type="1009" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="INFDNonVolParam" type="1010" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="INFDVolParam" type="1011" />
+    </data-set>
+    <data-set data-set-id="1012">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ITelegrVldBit" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ILifeSignInd" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="6" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1013">
+      <process-variable unit="mph" scale="0.01" zero-offset="0" array-size="1" name="ITrainSpeed" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="6" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1014">
+      <process-variable unit="s" scale="1" zero-offset="0" array-size="1" name="ISystemUtcTime" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IDaylightTime" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ITimeZone" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="2" name="Reserved1" type="UINT8" />
+      <process-variable unit="s" scale="1" zero-offset="0" array-size="1" name="ISystemTime" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="4" name="Reserved2" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1015">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IActiveCab" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ILocalActiveCab" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ICouplerStateX" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ICouplerStateY" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ICarOpMode" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="3" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1016">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IMaintAllowed" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IPDepTestAllowed" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="10" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="8001101">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="LifeSignTCMS" type="1012" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="Speed" type="1013" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="Time" type="1014" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="TrainConfig" type="1015" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="TrainGenInfo" type="1016" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="20" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="8001102">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="64" name="IFileSvrHstName" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IFileSvrPath" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileVersion1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileRelease1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileUpdate1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileEvolve1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IFileName1" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileVersion2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileRelease2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileUpdate2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileEvolve2" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IFileName2" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileVersion3" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileRelease3" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileUpdate3" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileEvolve3" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IFileName3" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileVersion4" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileRelease4" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileUpdate4" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileEvolve4" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IFileName4" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileVersion5" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileRelease5" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileUpdate5" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IFileEvolve5" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="IFileName5" type="CHAR8" />
+    </data-set>
+    <data-set data-set-id="1017">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="CIdSystemReq" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="7" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="8002001">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="Identification" type="1017" />
+    </data-set>
+    <data-set data-set-id="1018">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ISlfTestOnDemQty" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="10" name="CSlfTestOnDemReq" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="4" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="8003001">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="TestOnDemand" type="1018" />
+    </data-set>
+    <data-set data-set-id="1019">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ITelegrVldtBit" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="ILifeSignInd" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="6" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1020">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="PPTEEngLvlPw" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="PPTEMaintLvlPw" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="12" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1021">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="PNavigTimeOut" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="39" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1022">
+      <process-variable unit="mph" scale="0.1" zero-offset="0" array-size="1" name="PCarWashSpd" type="UINT8" />
+      <process-variable unit="s" scale="0.1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="mph" scale="0.1" zero-offset="0" array-size="1" name="PCouplingSpd" type="UINT8" />
+      <process-variable unit="mphps" scale="0.1" zero-offset="0" array-size="1" name="PYardAccelLimit" type="UINT8" />
+      <process-variable unit="s" scale="1" zero-offset="0" array-size="1" name="PGpsTimeGap" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="7" name="Reserved2" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1023">
+      <process-variable unit="°F" scale="1" zero-offset="0" array-size="1" name="PSupAirTSetPtO" type="INT16" />
+      <process-variable unit="°F" scale="1" zero-offset="0" array-size="1" name="PWintIntDesTSetPt" type="INT16" />
+      <process-variable unit="°F" scale="1" zero-offset="0" array-size="1" name="PSumIntDesTSetPt" type="INT16" />
+      <process-variable unit="h" scale="0.1" zero-offset="0" array-size="1" name="PVehKeyOffTiDelay" type="UINT8" />
+      <process-variable unit="s" scale="1" zero-offset="0" array-size="1" name="PYardManStTiDelay" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="8" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1024">
+      <process-variable unit="s" scale="0.1" zero-offset="0" array-size="1" name="POpeningTime" type="UINT8" />
+      <process-variable unit="s" scale="0.1" zero-offset="0" array-size="1" name="PClosingTime" type="UINT8" />
+      <process-variable unit="" scale="0.1" zero-offset="0" array-size="1" name="PClosingDelay" type="UINT8" />
+      <process-variable unit="in" scale="1" zero-offset="0" array-size="1" name="PObstBackDistCl" type="UINT8" />
+      <process-variable unit="s" scale="0.1" zero-offset="0" array-size="1" name="PObstStopTime" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="PObstRecycNbClose" type="UINT8" />
+      <process-variable unit="in" scale="1" zero-offset="0" array-size="1" name="PObstBackDistOpen" type="UINT8" />
+      <process-variable unit="s" scale="0.1" zero-offset="0" array-size="1" name="PReCloseStopTime" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="PObstRecycNbOpen" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="15" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1025">
+      <process-variable unit="s" scale="1" zero-offset="0" array-size="1" name="PGndFltAccelDelay" type="UINT8" />
+      <process-variable unit="s" scale="0.1" zero-offset="0" array-size="1" name="PGndFltDbnceTime" type="UINT8" />
+      <process-variable unit="s" scale="1" zero-offset="0" array-size="1" name="PTrnHrtBeatFreq" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="29" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="8003002">
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="GenInfo005" type="1019" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="CommParam005" type="1020" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="TODParam005" type="1021" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="LCUParam005" type="1022" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="HVACParam005" type="1023" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="DCPParam005" type="1024" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="MDSParam005" type="1025" />
+    </data-set>
+    <data-set data-set-id="8003100">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="IBufferSize" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="60000" name="IBufferArray" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1026">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="12" name="VSysSwId" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VSysSwVersion" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VSysSwRelease" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VSysSwUpdate" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VSysSwEvolve" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VSysSwDate" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VCrc" type="UINT32" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="10" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1027">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="4" name="Reserved2" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved3" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved4" type="UINT16" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved5" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="6" name="Reserved6" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1028">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="Reserved1" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VConfigStatus" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="6" name="Reserved2" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1029">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="16" name="Reserved1" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="128" name="Reserved2" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="6" name="Reserved3" type="UINT8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="126" name="Reserved4" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="1030">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="8" name="Reserved1" type="UINT8" />
+    </data-set>
+    <data-set data-set-id="8004001">
+      <process-variable unit="" scale="1" zero-offset="0" array-size="10" name="Reserved1" type="CHAR8" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="1" name="VSysSwNumber" type="UINT8" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="20" name="SoftwareVersion" type="1026" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="161" name="Reserved2" type="UINT8" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="Reserved3" type="1027" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="EndDeviceMode" type="1028" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="Reserved4" type="1029" />
+      <process-variable unit="" scale="1.0" zero-offset="0" array-size="1" name="Reserved5" type="1030" />
+      <process-variable unit="" scale="1" zero-offset="0" array-size="10" name="Reserved6" type="UINT8" />
+    </data-set>
+  </data-set-list>
+  <com-parameter-list>
+    <network-parameter-ip time-to-live="64" com-parameter-id="3" qos="6" name="IP_6" />
+  </com-parameter-list>
+  <device-configuration>
+    <pd-receive windows-priority="THREAD_PRIORITY_ABOVE_NORMAL" linux-priority="20" vxworks-priority="10" />
+    <pd-process cycle-time="100" windows-priority="THREAD_PRIORITY_NORMAL" linux-priority="15" vxworks-priority="15" />
+    <md-receive windows-priority="THREAD_PRIORITY_ABOVE_NORMAL" linux-priority="19" vxworks-priority="11" />
+    <md-process cycle-time="100" windows-priority="THREAD_PRIORITY_NORMAL" linux-priority="10" vxworks-priority="20" />
+    <iptcom-process windows-priority="THREAD_PRIORITY_NORMAL" linux-priority="15" vxworks-priority="20" />
+    <snmp-receive windows-priority="THREAD_PRIORITY_ABOVE_NORMAL" linux-priority="28" vxworks-priority="65" />
+    <net-ctrl linux-priority="20" />
+    <pd-com-parameter cycle-time="100" validity-behavior="0" timeout-value="0" />
+    <md-com-parameter response-timeout="5000" max-seq-no="50" ack-timeout="500" />
+  </device-configuration>
+</cpu>
