@@ -1,0 +1,2 @@
+# IPTComTestTool
+通过数据库发送和接收IPTCom协议的过程和消息数据
